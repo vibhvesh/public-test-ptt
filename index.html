@@ -1,38 +1,68 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101820"><title>Public Test — PTT</title>
+<meta name="theme-color" content="#101820"><title>Public Test — Live PTT</title>
 <style>
 :root{color-scheme:dark;--bg:#101820;--panel:#192630;--line:#2b3d49;--muted:#9aabb6;--green:#28c783;--orange:#ff9d42}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -20%,#29404d 0,transparent 45%),var(--bg);color:#f4f7f9;font:16px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
-main{width:min(720px,100%);margin:auto;padding:28px 18px 44px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.brand{font-weight:850;letter-spacing:.12em}.pill{font-size:11px;color:var(--green);border:1px solid #28694e;border-radius:99px;padding:6px 10px;letter-spacing:.1em}
-h1{font-size:clamp(30px,7vw,46px);margin:8px 0 5px;letter-spacing:-.04em}.sub{color:var(--muted);margin:0 0 24px}.panel{background:linear-gradient(145deg,#1b2a34,#15212a);border:1px solid var(--line);border-radius:20px;padding:20px;margin:16px 0;box-shadow:0 12px 40px #0002}
-label{display:block;font-size:13px;color:#bdc9d0;margin:0 0 8px}input{width:100%;background:#0f1920;border:1px solid #354956;border-radius:12px;color:white;padding:14px;font:inherit;outline:none}input:focus{border-color:var(--green)}
-button{border:0;border-radius:12px;padding:13px 16px;font:700 14px system-ui;cursor:pointer}.primary{background:var(--green);color:#062116}.secondary{background:#263945;color:#f3f7f9;border:1px solid #3b505d}.row{display:flex;gap:10px}.row>*{flex:1}.section-title{font-size:12px;color:var(--muted);letter-spacing:.12em;font-weight:700;margin:0 0 14px}.room{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--line)}.room small{display:block;color:var(--muted);margin-top:4px}.empty{color:var(--muted);font-size:14px;padding:12px 0}
-#roomView{display:none;text-align:center}.channel{font-size:13px;color:var(--muted);letter-spacing:.12em}.roomname{font-size:27px;font-weight:800;margin:6px 0 22px;overflow-wrap:anywhere}.ptt{width:min(230px,65vw);height:min(230px,65vw);border-radius:50%;background:linear-gradient(145deg,#2bd58c,#159b65);color:#052719;border:8px solid #ffffff20;box-shadow:0 0 0 10px #28c78318,0 18px 50px #0006;font-size:21px;font-weight:900;touch-action:none;user-select:none}.ptt:active,.ptt.talking{background:linear-gradient(145deg,#ffb45d,#f07828);color:#2b1605;transform:scale(.98)}.ptt:disabled{filter:grayscale(1);opacity:.55;cursor:not-allowed}.hint{color:var(--muted);font-size:13px;margin:18px 0}.notice{background:#392b19;border:1px solid #75502a;color:#ffd7a8;border-radius:12px;padding:12px;font-size:13px;line-height:1.5;margin-top:16px}.status{font-size:12px;color:var(--orange);margin-top:12px}.foot{color:#728591;text-align:center;font-size:12px;margin-top:30px}
-@media(max-width:480px){main{padding:20px 14px}.panel{padding:16px}.row{flex-direction:column}}
-</style></head>
-<body><main>
-<header class="top"><div class="brand">PUBLIC TEST <span style="color:var(--green)">/ PTT</span></div><span class="pill">OPEN TEST</span></header>
-<h1>Talk. Connect. Test.</h1><p class="sub">A simple public push-to-talk room. Create a channel and invite others with its link.</p>
+main{width:min(720px,100%);margin:auto;padding:24px 16px 42px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}.brand{font-weight:850;letter-spacing:.12em}.pill{font-size:11px;color:var(--green);border:1px solid #28694e;border-radius:99px;padding:6px 10px;letter-spacing:.1em}
+h1{font-size:clamp(30px,7vw,46px);margin:8px 0 5px;letter-spacing:-.04em}.sub{color:var(--muted);margin:0 0 24px}.panel{background:linear-gradient(145deg,#1b2a34,#15212a);border:1px solid var(--line);border-radius:20px;padding:18px;margin:15px 0;box-shadow:0 12px 40px #0002}
+label{display:block;font-size:13px;color:#bdc9d0;margin:0 0 8px}input{width:100%;min-width:0;background:#0f1920;border:1px solid #354956;border-radius:12px;color:white;padding:14px;font:inherit;outline:none}input:focus{border-color:var(--green)}
+button{border:0;border-radius:12px;padding:13px 16px;font:700 14px system-ui;cursor:pointer}.primary{background:var(--green);color:#062116}.secondary{background:#263945;color:#f3f7f9;border:1px solid #3b505d}.row{display:flex;gap:10px}.row>*{flex:1}.section-title{font-size:12px;color:var(--muted);letter-spacing:.12em;font-weight:700;margin:0 0 14px}
+#roomView{display:none;text-align:center}.channel{font-size:12px;color:var(--muted);letter-spacing:.12em}.roomname{font-size:26px;font-weight:800;margin:6px 0 4px;overflow-wrap:anywhere}.roomid{font-size:12px;color:var(--muted);margin-bottom:20px}.ptt{width:min(230px,65vw);height:min(230px,65vw);border-radius:50%;background:linear-gradient(145deg,#2bd58c,#159b65);color:#052719;border:8px solid #ffffff20;box-shadow:0 0 0 10px #28c78318,0 18px 50px #0006;font-size:21px;font-weight:900;touch-action:none;user-select:none;-webkit-user-select:none}.ptt.talking{background:linear-gradient(145deg,#ffb45d,#f07828);color:#2b1605}.ptt:disabled{filter:grayscale(1);opacity:.55;cursor:not-allowed}.hint{color:var(--muted);font-size:13px;margin:18px 0}.notice{background:#392b19;border:1px solid #75502a;color:#ffd7a8;border-radius:12px;padding:12px;font-size:13px;line-height:1.5;margin-top:16px}.status{font-size:13px;color:var(--orange);margin:12px 0}.members{color:#c4d0d7;font-size:13px;margin:12px 0}.foot{color:#728591;text-align:center;font-size:12px;margin-top:28px}.hidden{display:none!important}
+@media(max-width:480px){main{padding:18px 13px}.panel{padding:15px}.row{flex-direction:column}}
+</style></head><body><main>
+<header class="top"><div class="brand">PUBLIC TEST <span style="color:var(--green)">/ PTT</span></div><span class="pill">LIVE TEST</span></header>
+<h1>Talk. Connect. Test.</h1><p class="sub">Create a channel, share its invite link, and talk one person at a time.</p>
 <section id="home">
 <div class="panel"><p class="section-title">CREATE A CHANNEL</p><label for="newName">Channel name</label><div class="row"><input id="newName" maxlength="32" placeholder="e.g. Field Test 01"><button class="primary" id="create">Create channel</button></div></div>
-<div class="panel"><p class="section-title">JOIN A CHANNEL</p><label for="joinCode">Channel ID or invite link</label><div class="row"><input id="joinCode" placeholder="Enter channel ID"><button class="secondary" id="join">Join</button></div></div>
-<div class="panel"><p class="section-title">HOW IT WORKS</p><div style="color:#c4d0d7;line-height:1.8;font-size:14px">1. Create a public channel.<br>2. Share its invite link.<br>3. Friends open the link and join.<br>4. Press and hold to talk; release to stop.</div></div>
+<div class="panel"><p class="section-title">JOIN A CHANNEL</p><label for="joinCode">Channel ID or invite link</label><div class="row"><input id="joinCode" placeholder="Paste invite link or channel ID"><button class="secondary" id="join">Join</button></div></div>
+<div class="panel"><p class="section-title">HOW IT WORKS</p><div style="color:#c4d0d7;line-height:1.8;font-size:14px">1. Create a channel and share its invite link.<br>2. Others open the link or enter its channel ID.<br>3. Allow microphone access.<br>4. Hold the green button to talk; release to stop.</div></div>
 </section>
-<section class="panel" id="roomView"><div class="channel">PUBLIC CHANNEL</div><div class="roomname" id="roomName"></div><button class="ptt" id="ptt" disabled>HOLD TO<br>TALK</button><p class="hint" id="pttHint">Audio relay is not connected yet.</p><div class="row"><button class="secondary" id="copy">Copy invite link</button><button class="secondary" id="leave">Leave channel</button></div><div class="notice"><b>Testing preview:</b> This website is hosted on GitHub Pages. Live two-way audio requires the separate PTT relay server, which has not been connected yet.</div><div class="status" id="status">WAITING FOR RELAY SERVER</div></section>
-<div class="foot">PUBLIC TEST · Community PTT preview</div>
-</main>
+<section class="panel" id="roomView"><div class="channel">PUBLIC CHANNEL</div><div class="roomname" id="roomName"></div><div class="roomid" id="roomId"></div><button class="ptt" id="ptt" disabled>HOLD TO<br>TALK</button><p class="hint" id="pttHint">Connecting…</p><div class="members" id="members">0 other members</div><div class="row"><button class="secondary" id="copy">Copy invite link</button><button class="secondary" id="leave">Leave channel</button></div><div class="status" id="status">CONNECTING TO SIGNAL SERVER</div><div class="notice" id="notice">Use headphones where possible. The first connection may take a few seconds. Microphone permission is required.</div></section>
+<div class="foot">PUBLIC TEST · Two-way PTT beta</div>
+</main><div id="audioBin" class="hidden"></div>
 <script>
-const $=id=>document.getElementById(id);let active=null;
-function slug(s){return s.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,32)}
-function showRoom(id,name){active={id,name};$('home').style.display='none';$('roomView').style.display='block';$('roomName').textContent=name;$('ptt').disabled=true;history.pushState({},'',location.pathname+'#'+encodeURIComponent(id));}
-function enter(value){let id=value.trim();try{if(id.includes('#'))id=decodeURIComponent(id.split('#').pop().replace(/^/?/,'').replace(/^.*channel=/,''));}catch{}if(!id)return;showRoom(id,id.replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase()));}
-$('create').onclick=()=>{const name=$('newName').value.trim();if(!name){$('newName').focus();return}const id=slug(name)+'-'+Math.random().toString(36).slice(2,7);showRoom(id,name)};
-$('join').onclick=()=>enter($('joinCode').value);
-$('copy').onclick=async()=>{const url=location.origin+location.pathname+'#'+encodeURIComponent(active.id);try{await navigator.clipboard.writeText(url);$('status').textContent='INVITE LINK COPIED'}catch{$('status').textContent=url}};
-$('leave').onclick=()=>{active=null;$('roomView').style.display='none';$('home').style.display='block';history.pushState({},'',location.pathname)};
-$('ptt').addEventListener('pointerdown',e=>e.preventDefault());
-if(location.hash)enter(location.hash.slice(1));
+const SIGNAL_URL='wss://public-test-ptt-signal.onrender.com';
+const $=id=>document.getElementById(id);
+let ws=null,active=null,localStream=null,clientId=null,peers=new Map(),pendingIce=new Map(),floorHolder=null,pressing=false;
+const rtcConfig={iceServers:[{urls:'stun:stun.l.google.com:19302'},{urls:'stun:stun1.l.google.com:19302'}]};
+function channelFrom(value){let v=value.trim();try{if(v.includes('#'))v=decodeURIComponent(v.slice(v.lastIndexOf('#')+1));}catch{}return v.replace(/^channel=/,'').trim();}
+function makeId(){return Math.random().toString(36).slice(2,7)+'-'+Math.random().toString(36).slice(2,7);}
+function send(data){if(ws&&ws.readyState===WebSocket.OPEN)ws.send(JSON.stringify(data));}
+function setStatus(s){$('status').textContent=s;}
+function updateMembers(){const n=peers.size;$('members').textContent=n+' other member'+(n===1?'':'s')+(floorHolder?' · '+(floorHolder===clientId?'You have the floor':'Someone is talking'):'');}
+function sendSignal(to,type,payload){send({type,to,...payload});}
+function getPeer(id){if(peers.has(id))return peers.get(id);const pc=new RTCPeerConnection(rtcConfig);const entry={pc, audio:null};peers.set(id,entry);localStream.getTracks().forEach(t=>pc.addTrack(t,localStream));pc.onicecandidate=e=>{if(e.candidate)sendSignal(id,'ice',{candidate:e.candidate});};pc.ontrack=e=>{let a=entry.audio;if(!a){a=document.createElement('audio');a.autoplay=true;a.playsInline=true;$('audioBin').appendChild(a);entry.audio=a;}a.srcObject=e.streams[0];a.play().catch(()=>{$('pttHint').textContent='Tap the page once to enable incoming audio playback.';});};pc.onconnectionstatechange=()=>{if(['failed','closed','disconnected'].includes(pc.connectionState)){if(pc.connectionState!=='disconnected')dropPeer(id);}};return entry;}
+async function offerPeer(id){const e=getPeer(id);const offer=await e.pc.createOffer();await e.pc.setLocalDescription(offer);sendSignal(id,'offer',{description:e.pc.localDescription});}
+function dropPeer(id){const e=peers.get(id);if(e){e.pc.close();if(e.audio)e.audio.remove();peers.delete(id);}pendingIce.delete(id);updateMembers();}
+async function handleMessage(m){try{
+ if(m.type==='joined'){clientId=m.clientId;setStatus('CONNECTED · CHANNEL READY');$('ptt').disabled=false;$('pttHint').textContent='Hold to request the talk floor. Only one person talks at a time.';for(const p of m.peers||[])await offerPeer(p.id);updateMembers();}
+ if(m.type==='peer-joined'){setStatus('A member joined');updateMembers();}
+ if(m.type==='offer'){const e=getPeer(m.from);await e.pc.setRemoteDescription(m.description);for(const c of pendingIce.get(m.from)||[])await e.pc.addIceCandidate(c);pendingIce.delete(m.from);const a=await e.pc.createAnswer();await e.pc.setLocalDescription(a);sendSignal(m.from,'answer',{description:e.pc.localDescription});}
+ if(m.type==='answer'){const e=peers.get(m.from);if(e)await e.pc.setRemoteDescription(m.description);}
+ if(m.type==='ice'){const e=peers.get(m.from);if(e&&e.pc.remoteDescription)await e.pc.addIceCandidate(m.candidate);else{const q=pendingIce.get(m.from)||[];q.push(m.candidate);pendingIce.set(m.from,q);}}
+ if(m.type==='peer-left'){dropPeer(m.peerId);setStatus('A member left');}
+ if(m.type==='floor-granted'){floorHolder=m.peerId;updateMembers();if(floorHolder===clientId){localStream.getAudioTracks().forEach(t=>t.enabled=true);$('ptt').classList.add('talking');$('ptt').textContent='TALKING';$('pttHint').textContent='You have the floor. Release to stop.';}}
+ if(m.type==='floor-denied'){$('pttHint').textContent='Someone else is talking. Try again in a moment.';}
+ if(m.type==='floor-released'){floorHolder=null;localStream.getAudioTracks().forEach(t=>t.enabled=false);$('ptt').classList.remove('talking');$('ptt').innerHTML='HOLD TO<br>TALK';$('pttHint').textContent='Channel is ready. Hold to request the talk floor.';updateMembers();}
+ if(m.type==='error'){setStatus('SERVER: '+m.message);}
+ }catch(err){console.error(err);setStatus('Connection negotiation error: '+err.message);}}
+async function enterRoom(id,name){if(!id)return;active={id,name};$('home').style.display='none';$('roomView').style.display='block';$('roomName').textContent=name;$('roomId').textContent='CHANNEL ID: '+id;setStatus('REQUESTING MICROPHONE…');$('ptt').disabled=true;
+ try{localStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true},video:false});localStream.getAudioTracks().forEach(t=>t.enabled=false);}catch(e){setStatus('MICROPHONE ERROR: '+e.message);$('pttHint').textContent='Allow microphone access in your browser settings, then rejoin.';return;}
+ setStatus('CONNECTING TO SIGNAL SERVER…');ws=new WebSocket(SIGNAL_URL);
+ ws.onopen=()=>send({type:'join',roomId:id});
+ ws.onmessage=e=>{try{handleMessage(JSON.parse(e.data));}catch(err){console.error(err);}};
+ ws.onerror=()=>setStatus('Could not reach signaling server. Backend may not be deployed yet.');
+ ws.onclose=()=>{if(active)setStatus('SIGNAL SERVER DISCONNECTED');};
+}
+function leaveRoom(){pressing=false;send({type:'floor-release'});send({type:'leave'});if(ws){ws.close();ws=null;}for(const id of [...peers.keys()])dropPeer(id);if(localStream){localStream.getTracks().forEach(t=>t.stop());localStream=null;}active=null;clientId=null;floorHolder=null;$('ptt').disabled=true;$('roomView').style.display='none';$('home').style.display='block';history.pushState({},'',location.pathname);}
+$('create').onclick=()=>{const name=$('newName').value.trim();if(!name){$('newName').focus();return;}enterRoom(makeId(),name);};
+$('join').onclick=()=>{const id=channelFrom($('joinCode').value);if(!id){$('joinCode').focus();return;}enterRoom(id,id.replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase()));};
+$('copy').onclick=async()=>{const url=location.origin+location.pathname+'#'+encodeURIComponent(active.id);try{await navigator.clipboard.writeText(url);setStatus('INVITE LINK COPIED');}catch{setStatus(url);}};
+$('leave').onclick=leaveRoom;
+function pressStart(e){if(e)e.preventDefault();if(!active||$('ptt').disabled||pressing)return;pressing=true;send({type:'floor-request'});}
+function pressEnd(e){if(e)e.preventDefault();if(!pressing)return;pressing=false;if(floorHolder===clientId)send({type:'floor-release'});}
+$('ptt').addEventListener('pointerdown',pressStart);$('ptt').addEventListener('pointerup',pressEnd);$('ptt').addEventListener('pointercancel',pressEnd);$('ptt').addEventListener('pointerleave',e=>{if(e.buttons===0)pressEnd(e);});window.addEventListener('blur',pressEnd);
+if(location.hash){const id=channelFrom(location.hash);$('joinCode').value=id;enterRoom(id,id.replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase()));}
 </script></body></html>
